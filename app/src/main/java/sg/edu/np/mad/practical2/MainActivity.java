@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         User usr = new User("Kyler", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua \n test \n test", 1, false);
 
         Button button1 = findViewById(R.id.button);
+        Button button2 = findViewById(R.id.button2);
         TextView username = findViewById(R.id.username);
         Intent receive = getIntent();
         int randint = receive.getIntExtra("random", -1);
@@ -39,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
                     toast.show();
                 }
                 usr.Followed = !usr.Followed;
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MessageGroup.class);
+                startActivity(i);
             }
         });
     }
